@@ -1,0 +1,22 @@
+# Replace DOMAIN in scripts/deploy/vps-install.sh (auto)
+DOMAIN {
+  encode gzip
+
+  # Storefront + Admin (Next.js)
+  reverse_proxy web:3000
+
+  # API
+  handle_path /api/* {
+    reverse_proxy api:4000
+  }
+
+  # Webhooks (Meta/PayFast/etc.) hit API directly (no /api prefix)
+  handle /webhooks/* {
+    reverse_proxy api:4000
+  }
+
+  # Public uploads served by API
+  handle /uploads/* {
+    reverse_proxy api:4000
+  }
+}

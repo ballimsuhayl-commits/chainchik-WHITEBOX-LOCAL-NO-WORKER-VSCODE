@@ -1,0 +1,7 @@
+{
+  "terminal.integrated.defaultProfile.windows": "PowerShell",
+  "files.exclude": {
+    "**/.next": true,
+    "**/node_modules": true
+  }
+}

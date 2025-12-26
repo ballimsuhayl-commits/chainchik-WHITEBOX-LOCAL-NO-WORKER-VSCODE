@@ -1,0 +1,32 @@
+{
+  "name": "@cc/api",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node --watch src/index.ts",
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "node --test test/*.test.ts"
+  },
+  "dependencies": {
+    "@cc/shared": "workspace:*",
+    "fastify": "^4.28.1",
+    "@fastify/cors": "^9.0.1",
+    "@fastify/swagger": "^8.14.0",
+    "@fastify/swagger-ui": "^3.0.0",
+    "@fastify/rate-limit": "^10.1.0",
+    "pg": "^8.12.0",
+    "@fastify/multipart": "^9.0.3",
+    "bcryptjs": "^2.4.3",
+    "pino": "^9.4.0",
+    "pino-pretty": "^11.2.2",
+    "@fastify/sensible": "^6.0.2",
+    "@aws-sdk/client-s3": "^3.679.0",
+    "fastify-raw-body": "^5.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.10",
+    "typescript": "^5.5.4"
+  }
+}
