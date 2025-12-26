@@ -67,7 +67,6 @@ async function requireAdmin(req: any) {
   req.admin = v;
 }
 
-}
 
 function parseJsonOrThrow(buf: any) {
   if (Buffer.isBuffer(buf)) return JSON.parse(buf.toString("utf8"));
