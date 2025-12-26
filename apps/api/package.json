@@ -10,7 +10,7 @@
     "test": "node --test test/*.test.ts"
   },
   "dependencies": {
-    "@cc/shared": "workspace:*",
+    "@cc/shared": "file:../../packages/shared",
     "fastify": "^4.28.1",
     "@fastify/cors": "^9.0.1",
     "@fastify/swagger": "^8.14.0",

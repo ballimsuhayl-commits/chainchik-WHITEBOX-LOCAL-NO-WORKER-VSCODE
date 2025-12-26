@@ -8,7 +8,6 @@
 - Postgres migrations + migrator
 - Docker compose for portability
 - CI workflow (GitHub Actions) + tests scaffolding
-- Test
 
 ## Quickstart
 ```bash

@@ -427,7 +427,8 @@ app.post("/v1/admin/products.csv", async (req, reply) => {
       const cols = line.split(",");
       const sku = cols[idx("sku")]?.trim();
       if (!sku) continue;
-      const name = JSON.parse(cols[idx("name")] ?? """");
+      // Parse the product name; default to an empty quoted string if missing
+      const name = JSON.parse(cols[idx("name")] ?? '""');
       const price_cents = Number(cols[idx("price_cents")] ?? 0);
       const stock_qty = Number(cols[idx("stock_qty")] ?? 0);
       const low_stock_threshold = Number(cols[idx("low_stock_threshold")] ?? 3);
@@ -677,7 +678,6 @@ app.post("/v1/admin/login", async (req, reply) => {
   reply.send({ ok: true });
 });
 
-});
 
 // Admin: send WhatsApp message (manual / AI assist)
 app.post("/v1/admin/whatsapp/send", async (req, reply) => {
